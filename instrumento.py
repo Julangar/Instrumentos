@@ -62,7 +62,7 @@ class Violin (Instrumento):
 
 class Persona(object):
 
-    def Nombre(self,nombre,apellido):
+    def __init__(self,nombre,apellido):
         self.nombre = nombre
         self.apellido = apellido
 
@@ -71,7 +71,10 @@ class Musico (Persona):
     def _init_(self, nombre, apellido):
         Persona.__init__(self, nombre, apellido)
 
+        
+
 musico1 = Musico("Pepito", "Perez")
+print(musico1.nombre , musico1.apellido)
 i = Instrumento
 opc = random.randrange(3)
 opc2 = random.randrange(7)
