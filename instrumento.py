@@ -60,25 +60,18 @@ class Violin (Instrumento):
     def tocar_nota(self,nota):
         return print("Tocando violin en ",nota,"...")
 
-class Persona():
+class Persona(object):
 
-    Name = ""
-    Apellido = ""
-    def Nombre(self,Name,Apellido):
-        pass
+    def Nombre(self,nombre,apellido):
+        self.nombre = nombre
+        self.apellido = apellido
 
 class Musico (Persona):
 
-    def _init_(self, Name, Apellido):
-        self._nombre_ = Name
-        self._apellido_ = Apellido
- 
-    def get_nombre(self):
-        return self._nombre_
+    def _init_(self, nombre, apellido):
+        Persona.__init__(self, nombre, apellido)
 
-    def get_apellido(self):
-        return self._apellido_
-
+musico1 = Musico("Pepito", "Perez")
 i = Instrumento
 opc = random.randrange(3)
 opc2 = random.randrange(7)
