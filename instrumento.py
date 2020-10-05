@@ -62,28 +62,56 @@ class Violin (Instrumento):
 
 class Persona(object):
 
-    def __init__(self,nombre,apellido):
+    def __init__(self,nombre):
         self.nombre = nombre
-        self.apellido = apellido
+
+    def presentar(self):
+        print("Hola mi nombre es ",self.nombre)
+
 
 class Musico (Persona):
 
-    def _init_(self, nombre, apellido):
-        Persona.__init__(self, nombre, apellido)
+    def tocar(self, i = Instrumento ):
+        i.afinar
+        i.tocar
+        i.tocar_nota
 
-        
+class Banda:
 
-musico1 = Musico("Pepito", "Perez")
-print(musico1.nombre , musico1.apellido)
-i = Instrumento
-opc = random.randrange(3)
+    def __init__(self):
+        self.musicos = []
+
+    def agregar_musico(self, nombre, m = Musico ):
+        self.musicos.append(m.nombre)
+        return print(self.musicos)
+
+    def generar_instrumento(self):
+        i = Instrumento
+        opc = random.randrange(3)
+        if(opc == 1):
+            i = Guitarra
+        if(opc == 2):
+            i = Bajo
+        if(opc == 3):
+            i = Violin
+    
+    def presentar_banda(self):
+        m = Musico
+        musicos = []
+        for m in musicos:
+            m.presentar()
+            m.tocar(generar_instrumento())
+
+           
+b = Banda
+b.agregar_musico("","Pepito")
+b.agregar_musico("","Juan")
+b.agregar_musico("","Mariana")
+
+
+"""
 opc2 = random.randrange(7)
-if(opc == 1):
-    i = Guitarra
-if(opc == 2):
-    i = Bajo
-if(opc == 3):
-    i = Violin
+
 
 i.afinar("")
 i.tocar("")
@@ -101,3 +129,4 @@ if(opc2 == 6):
     i.tocar_nota("","La")
 if(opc2 == 7):
     i.tocar_nota("","Si")
+"""
