@@ -46,13 +46,62 @@ class Bajo(Instrumento):
     def tocar_nota(self, nota):
         return print("Tocando bajo en ",nota)
 
+class Violin (Instrumento):
+
+    def __init__(self):
+        pass
+
+    def afinar(self):
+        return print("Afinando violin...")
+
+    def tocar(self):
+        return print("Tocando violin...")
+
+    def tocar_nota(self,nota):
+        return print("Tocando violin en ",nota,"...")
+
+class Persona():
+
+    Name = ""
+    Apellido = ""
+    def Nombre(self,Name,Apellido):
+        pass
+
+class Musico (Persona):
+
+    def _init_(self, Name, Apellido):
+        self._nombre_ = Name
+        self._apellido_ = Apellido
+ 
+    def get_nombre(self):
+        return self._nombre_
+
+    def get_apellido(self):
+        return self._apellido_
+
 i = Instrumento
 opc = random.randrange(3)
+opc2 = random.randrange(7)
 if(opc == 1):
     i = Guitarra
-elif(opc == 2):
+if(opc == 2):
     i = Bajo
+if(opc == 3):
+    i = Violin
 
 i.afinar("")
 i.tocar("")
-i.tocar_nota("","Do")
+if(opc2 == 1):
+    i.tocar_nota("","Do")
+if(opc2 == 2):
+    i.tocar_nota("","Re")
+if(opc2 == 3):
+    i.tocar_nota("","Mi")
+if(opc2 == 4):
+    i.tocar_nota("","Fa")
+if(opc2 == 5):
+    i.tocar_nota("","Sol")
+if(opc2 == 6):
+    i.tocar_nota("","La")
+if(opc2 == 7):
+    i.tocar_nota("","Si")
