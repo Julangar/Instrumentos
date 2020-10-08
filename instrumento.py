@@ -30,7 +30,7 @@ class Guitarra(Instrumento):
 
     def tocar_nota(self):
 
-        opc2 = random.randrange(7)
+        opc2 = random.randrange(1,8)
         if(opc2 == 1):
             nota = "Do"
             return print("Tocando guitarra en ",nota)
@@ -64,7 +64,7 @@ class Violin(Instrumento):
 
     def tocar_nota(self):
 
-        opc2 = random.randrange(7)
+        opc2 = random.randrange(1,8)
         if(opc2 == 1):
             nota = "Do"
             return print("Tocando violin en ",nota)
@@ -98,7 +98,7 @@ class Bajo(Instrumento):
 
     def tocar_nota(self):
 
-        opc2 = random.randrange(7)
+        opc2 = random.randrange(1,8)
         if(opc2 == 1):
             nota = "Do"
             return print("Tocando bajo en ",nota)
@@ -144,7 +144,7 @@ class Banda(object):
         return musicos
 
     def generar_instrumento(self):
-        opc = random.randrange(3)
+        opc = random.randrange(1,4)
         if(opc == 1):
             l = Guitarra()
             return l
@@ -154,8 +154,7 @@ class Banda(object):
         elif(opc == 3):
             j = Violin()
             return j
-
-    
+  
     def presentar_banda(self):
         m = Musico
         tamaño_lista = len(musicos)
